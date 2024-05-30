@@ -1,46 +1,116 @@
-# Sinhala Unicode Converter
+Sure, here is the content in a more copy-friendly format:
 
-This document describes the `convertor` function, which converts Sinhala Unicode text to specified typing styles such as FM or ISI.
+---
 
-## Function: `convertor`
+# Sinhala Unicode Text Converter
 
-### Description
-The `convertor` function takes Sinhala Unicode text and converts it to a specified typing style. The supported typing styles are FM and ISI.
+This Python script converts Sinhala Unicode text to legacy font styles ['fm' and 'isi']. It is designed to help programmers working on Sinhala Unicode converters and related projects.
 
-### Parameters
-- `sinhala_unicode` (str): The input text in Sinhala Unicode format.
-- `typing_style` (str): The desired typing style to convert the text to. Supported values are `"FM"` and `"ISI"`.
+## Features
 
-### Returns
+- Converts Sinhala Unicode text to specified typing styles: 'fm' and 'isi'.
+- Easy to use and integrate into other projects.
+- JSON-based mapping for flexibility and easy updates.
+
+## Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/gavi-tharaka/sinhala_convertor.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```sh
+   cd sinhala_convertor
+   ```
+
+3. Ensure you have Python installed. This script is compatible with Python 3.
+
+## Usage
+
+1. Ensure you have a `data_list.json` file in the same directory as the script. This file should contain the mapping between Unicode characters and the legacy font styles.
+
+2. Import the `convertor` function from the script and use it to convert text:
+
+   ```python
+   import json
+   from convertor_script import convertor
+
+   # Load the data list
+   with open('data_list.json', 'r') as file:
+       data_list = json.load(file)
+
+   # Example usage
+   text = "මම සිංහල"
+   converted_text_fm = convertor(text, 'fm')
+   converted_text_isi = convertor(text, 'isi')
+
+   print("Original Text:", text)
+   print("Converted Text (fm):", converted_text_fm)
+   print("Converted Text (isi):", converted_text_isi)
+   ```
+
+## Function Documentation
+
+### `convertor`
+
+Convert Sinhala Unicode text to a specified typing style.
+
+**Parameters:**
+- `text` (str): The input text in Sinhala Unicode format.
+- `style` (str): The desired typing style to convert the text to. Accepted values are 'fm' and 'isi'.
+
+**Returns:**
 - `str`: The converted text in the specified typing style.
 
-### Example Usage
+### Example
 
 ```python
-def convertor(sinhala_unicode, typing_style):
-    """
-    Convert Sinhala Unicode text to a specified typing style.
+text = "ආයුබෝවන්"
+style = 'fm'
 
-    Parameters:
-    sinhala_unicode (str): The input text in Sinhala Unicode format.
-    typing_style (str): The desired typing style to convert the text to.
+converted_text = convertor(text, style)
+print(converted_text)
+```
 
-    Returns:
-    str: The converted text in the specified typing style.
-    """
-    # Example implementation (dummy logic)
-    if typing_style == "FM":
-        # Conversion logic for FM typing style
-        return sinhala_unicode.upper()  # Dummy conversion
-    elif typing_style == "ISI":
-        # Conversion logic for ISI typing style
-        return sinhala_unicode.lower()  # Dummy conversion
-    else:
-        return sinhala_unicode
+## JSON Data Format
 
-# Example usage
-result_fm = convertor("සිංහල", "FM")
-print(result_fm)  # Outputs: සිංහල (in uppercase if applicable)
+The `data_list.json` should have the following format:
 
-result_isi = convertor("සිංහල", "ISI")
-print(result_isi)  # Outputs: සිංහල (in lowercase if applicable)
+```json
+[
+    {
+        "uni": "අ",
+        "fm": "a",
+        "isi": "A"
+    },
+    {
+        "uni": "ආ",
+        "fm": "aa",
+        "isi": "AA"
+    },
+    ...
+]
+```
+
+## Contribution
+
+Feel free to fork this project, submit issues, and make pull requests. Your contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any inquiries or feedback, please contact [Your Email] or open an issue on GitHub.
+
+---
+
+Enjoy converting Sinhala Unicode text with ease!
+
+---
+
+You can now copy and paste this content into a `README.md` file and add it to your GitHub repository.
