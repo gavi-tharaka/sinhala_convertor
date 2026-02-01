@@ -77,7 +77,7 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For any inquiries or feedback, please contact [Your Email] or open an issue on GitHub.
+For any inquiries or feedback, please contact gavi.tharaka@gmail.com or open an issue on GitHub.
 
 ---
 
